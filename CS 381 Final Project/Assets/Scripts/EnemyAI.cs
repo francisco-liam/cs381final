@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     {
         distance = transform.position - player.transform.position;
 
-        if(distance.magnitude < 5)
+        if(distance.magnitude < 7.5)
         {
             transform.LookAt(player.transform);
             if(shootTimer == bufferTime)
