@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour
 {
     public GameObject player;
     public GameObject projectilePrefab;
+    public AudioSource spitSound;
+    public int projectileSpeed;
 
     GameObject enemyProjectile;
     Vector3 distance;
@@ -30,10 +32,12 @@ public class EnemyAI : MonoBehaviour
             transform.LookAt(player.transform);
             if(shootTimer == bufferTime)
             {
+                spitSound.Play();
                 enemyProjectile = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
-                enemyProjectile.GetComponent<Rigidbody>().AddForce(transform.forward*500);
+                enemyProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
                 bufferTime = Random.Range(3f, 5f);
                 shootTimer = 0;
+                //spitSound.Stop();
             }
         }
 
