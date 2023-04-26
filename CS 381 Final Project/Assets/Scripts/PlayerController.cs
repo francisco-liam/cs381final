@@ -48,8 +48,6 @@ public class PlayerController : MonoBehaviour
             Physics.gravity =  new Vector3(1, -gravY, 1);
         }
 
-        
-
         if(damageTimer < iTime)
             damageTimer += Time.deltaTime;
 
