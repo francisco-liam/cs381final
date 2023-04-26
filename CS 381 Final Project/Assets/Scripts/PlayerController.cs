@@ -50,13 +50,7 @@ public class PlayerController : MonoBehaviour
             Physics.gravity = new Vector3(1, -gravY, 1);
         }
 
-<<<<<<< Updated upstream
-        if(damageTimer < iTime)
-=======
-
-
         if (damageTimer < iTime)
->>>>>>> Stashed changes
             damageTimer += Time.deltaTime;
 
         if (damageTimer > iTime)
