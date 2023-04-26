@@ -24,9 +24,7 @@ public class LoadInstructions : MonoBehaviour
             }
             else
             {
-                isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
+                PauseGame();
             }
         }
         
@@ -39,6 +37,7 @@ public class LoadInstructions : MonoBehaviour
 
     public void loadMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -52,6 +51,13 @@ public class LoadInstructions : MonoBehaviour
         isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void PauseGame()
+    {
+        isPaused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void QuitGame()
     {
