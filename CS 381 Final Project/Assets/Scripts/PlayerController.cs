@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -58,6 +59,11 @@ public class PlayerController : MonoBehaviour
         health = Mathf.Clamp(health, 0, 3);
 
         healthText.text = "Health: " + health + "/3";
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
